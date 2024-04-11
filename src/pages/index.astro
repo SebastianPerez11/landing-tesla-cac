@@ -1,32 +1,129 @@
 ---
-	import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
+import LogoTesla from "../svg/LogoTesla.astro";
+import IconPerson from "../svg/IconPerson.astro";
+import IconGlobe from "../svg/IconGlobe.astro";
+import IconHelp from "../svg/IconHelp.astro";
 ---
 
-<Layout title="Landing Tesla" >
-	<main>
-		<!-- Seba-Hero-Section -->
-		<header>
+<Layout title="Landing Tesla">
+  <main>
+    <!-- Seba-Hero-Section -->
+    <header class="flex justify-center w-full fixed z-10">
+      <nav
+        class="flex items-center justify-between py-1 px-12 w-full max-w-[1920px]"
+      >
+        <picture class="flex w-[120px] h-[32px]">
+          <LogoTesla class="w-full fill-white" />
+        </picture>
 
-		</header>
-		<section>
+        <ul class="flex text-white">
+          <li class="my-3 mx-5"><a href="/">Vehiculos</a></li>
+          <li class="my-3 mx-5"><a href="/">Energia</a></li>
+          <li class="my-3 mx-5"><a href="/">Carga</a></li>
+          <li class="my-3 mx-5"><a href="/">Descubri</a></li>
+          <li class="my-3 mx-5"><a href="/">Tienda</a></li>
+        </ul>
 
-		</section>
+        <ul class="flex gap-3">
+          <li class="w-6"><a href="/"> <IconHelp class="fill-white" /> </a></li>
+          <li class="w-6">
+            <a href="/"> <IconGlobe class="fill-white" /> </a>
+          </li>
+          <li class="w-6">
+            <a href="/"> <IconPerson class="fill-white" /> </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-		<!-- Fran-Section -->
-		<section>
-			
-		</section>
+    <section id="carrusel" class="block w-full h-screen relative">
+      <video
+        class="absolute w-full h-full object-cover"
+        muted
+        autoplay="true"
+        loop
+        id="video"
+      >
+        <source
+          src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto/Homepage-Model-Y-Promo-Desktop-v2.mp4#t=0.01#t=0.01"
+        />
+      </video>
+      <div
+        class="flex flex-col justify-end py-40 px-12 absolute h-full w-full text-white"
+      >
+        <header>
+          <h1 class="text-[40px] w-max font-semibold mb-5 leading-tight">
+            Model Y Starting at $37,490 <br /> After Federal Tax Credit
+          </h1>
+          <p class="w-[66ch] font-medium">
+            Eligible buyers qualify for a $7,500 federal tax credit. Applied at
+            time of Model Y <br /> delivery. <a class="underline" href="/"
+              >See Details</a
+            >
+          </p>
+        </header>
 
-		<!-- Nahu Section -->
-		<section>
+        <footer class="mt-10">
+          <a
+            class="inline-block text-center py-[8.5px] min-w-48 rounded-md bg-white text-black mr-3 font-medium"
+            href="/">Shop Available</a
+          >
+          <a
+            class="inline-block text-center py-[8.5px] min-w-48 rounded-md bg-black/90 font-medium"
+            href="/">Demo Drive</a
+          >
+        </footer>
+      </div>
+    </section>
 
-		</section>
+    <section id="carrusel2" class="block w-full h-screen relative">
+      <video
+        class="absolute w-full h-full object-cover"
+        muted
+        autoplay="true"
+        loop
+        id="video"
+      >
+        <source
+          src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto/Homepage-Model-Y-Promo-Desktop-v2.mp4#t=0.01#t=0.01"
+        />
+      </video>
+      <div
+        class="flex flex-col justify-end py-40 px-12 absolute h-full w-full text-white"
+      >
+        <header>
+          <h1 class="text-[40px] w-max font-semibold mb-5 leading-tight">
+            Model Y Starting at $37,490 <br /> After Federal Tax Credit
+          </h1>
+          <p class="w-[66ch] font-medium">
+            Eligible buyers qualify for a $7,500 federal tax credit. Applied at
+            time of Model Y <br /> delivery. <a class="underline" href="/"
+              >See Details</a
+            >
+          </p>
+        </header>
 
-		<!-- Grupal-->
-		<footer>
+        <footer class="mt-10">
+          <a
+            class="inline-block text-center py-[8.5px] min-w-48 rounded-md bg-white text-black mr-3 font-medium"
+            href="/">Shop Available</a
+          >
+          <a
+            class="inline-block text-center py-[8.5px] min-w-48 rounded-md bg-black/90 font-medium"
+            href="/">Demo Drive</a
+          >
+        </footer>
+      </div>
+    </section>
 
-		</footer>
-	</main>
+    <!-- Fran-Section -->
+    <section></section>
+
+    <!-- Nahu Section -->
+    <section></section>
+
+    <!-- Grupal-->
+    <footer></footer>
+  </main>
 </Layout>
-
-
