@@ -4,40 +4,95 @@ import LogoTesla from "../svg/LogoTesla.astro";
 import IconPerson from "../svg/IconPerson.astro";
 import IconGlobe from "../svg/IconGlobe.astro";
 import IconHelp from "../svg/IconHelp.astro";
+import ButtonPrimary from "../components/ButtonPrimary.astro";
 ---
 
 <Layout title="Landing Tesla">
   <main>
     <!-- Seba-Hero-Section -->
-    <header class="flex justify-center w-full fixed z-10">
+    <header class="flex justify-center w-full fixed z-40">
       <nav
         class="flex items-center justify-between py-1 px-12 w-full max-w-[1920px]"
       >
         <picture class="flex w-[120px] h-[32px]">
-          <LogoTesla class="w-full fill-white" />
+          <LogoTesla id="logoTesla" class="w-full fill-white" />
         </picture>
 
-        <ul class="flex text-white">
-          <li class="my-3 mx-5"><a href="/">Vehiculos</a></li>
-          <li class="my-3 mx-5"><a href="/">Energia</a></li>
-          <li class="my-3 mx-5"><a href="/">Carga</a></li>
-          <li class="my-3 mx-5"><a href="/">Descubri</a></li>
-          <li class="my-3 mx-5"><a href="/">Tienda</a></li>
+        <ul class="flex group">
+          <li class="my-3 mx-5">
+            <a class="link text-white" href="/">Vehiculos</a>
+          </li>
+          <li class="my-3 mx-5">
+            <a class="link text-white" href="/">Energia</a>
+          </li>
+          <li class="my-3 mx-5">
+            <a class="link text-white" href="/">Carga</a>
+          </li>
+          <li class="my-3 mx-5">
+            <a class="link text-white" href="/">Descubri</a>
+          </li>
+          <li class="my-3 mx-5">
+            <a class="link text-white" href="/">Tienda</a>
+          </li>
         </ul>
 
-        <ul class="flex gap-3">
-          <li class="w-6"><a href="/"> <IconHelp class="fill-white" /> </a></li>
+        <ul class="flex gap-4">
+          <li class="w-6"><a href="/"> <IconHelp class="fill-white icon" /> </a></li>
           <li class="w-6">
-            <a href="/"> <IconGlobe class="fill-white" /> </a>
+            <a href="/"> <IconGlobe class="fill-white icon" /> </a>
           </li>
           <li class="w-6">
-            <a href="/"> <IconPerson class="fill-white" /> </a>
+            <a href="/"> <IconPerson class="fill-white icon" /> </a>
           </li>
         </ul>
       </nav>
     </header>
+    <div
+      id="menuhidden"
+      class="bg-white w-full h-72 fixed -translate-y-full right-0 z-10 transition-transform duration-200"
+    >
+    </div>
 
-    <section id="carrusel" class="block w-full h-screen relative">
+    <script>
+      const links = document.querySelectorAll(".link");
+      const icons = document.querySelectorAll(".icon");
+      const menuHidden = document.querySelector("#menuhidden");
+      const logoTesla = document.querySelector("#logoTesla");
+      const hero = document.querySelector("#hero");
+      const body = document.querySelector("#body")
+
+      links.forEach((link) => {
+        link.addEventListener("mouseover", () => {
+          links.forEach((link) => {
+            link.classList.remove("text-white")
+            link.classList.add("text-black");
+          });
+          icons.forEach((icon) => {
+            icon.classList.remove("fill-white")
+            icon.classList.add("fill-black");
+          });
+          menuHidden.classList.remove("-translate-y-full");
+          logoTesla.classList.remove("fill-white");
+          body.classList.add("overflow-hidden")
+        });
+      });
+
+      hero.addEventListener("mouseover", () => {
+        links.forEach((link) => {
+          link.classList.remove("text-black");
+          link.classList.add("text-white")
+        });
+        icons.forEach((icon) => {
+            icon.classList.remove("fill-black")
+            icon.classList.add("fill-white");
+          });
+        logoTesla.classList.add("fill-white");
+        menuHidden.classList.add("-translate-y-full");
+        body.classList.remove("overflow-hidden")
+      });
+    </script>
+
+    <section id="hero" class="block w-full h-screen relative">
       <video
         class="absolute w-full h-full object-cover"
         muted
@@ -65,14 +120,17 @@ import IconHelp from "../svg/IconHelp.astro";
         </header>
 
         <footer class="mt-10">
-          <a
-            class="inline-block text-center py-[8.5px] min-w-48 rounded-md bg-white text-black mr-3 font-medium"
-            href="/">Shop Available</a
-          >
-          <a
-            class="inline-block text-center py-[8.5px] min-w-48 rounded-md bg-black/90 font-medium"
-            href="/">Demo Drive</a
-          >
+          <ButtonPrimary
+            href="/"
+            class="bg-white/90 text-black/90"
+            content="Shop Available"
+          />
+
+          <ButtonPrimary
+            href="/"
+            class="bg-black/90 text-white"
+            content="Demo Drive"
+          />
         </footer>
       </div>
     </section>
@@ -105,14 +163,17 @@ import IconHelp from "../svg/IconHelp.astro";
         </header>
 
         <footer class="mt-10">
-          <a
-            class="inline-block text-center py-[8.5px] min-w-48 rounded-md bg-white text-black mr-3 font-medium"
-            href="/">Shop Available</a
-          >
-          <a
-            class="inline-block text-center py-[8.5px] min-w-48 rounded-md bg-black/90 font-medium"
-            href="/">Demo Drive</a
-          >
+          <ButtonPrimary
+            class="bg-white/90 text-black/90"
+            href="/"
+            content="Shop Available"
+          />
+
+          <ButtonPrimary
+            href="/"
+            class="bg-black/90 text-white/90"
+            content="Demo Drive"
+          />
         </footer>
       </div>
     </section>
