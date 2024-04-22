@@ -1,0 +1,248 @@
+---
+import LogoTesla from "../svg/LogoTesla.astro";
+import IconPerson from "../svg/IconPerson.astro";
+import IconGlobe from "../svg/IconGlobe.astro";
+import IconHelp from "../svg/IconHelp.astro";
+import CardCar from "../components/CardCar.astro";
+import IconNavBar from "./IconNavBar.astro";
+import ButtonNavBar from "./ButtonNavBar.astro";
+import LinksRightCar from "./LinksRightCar.astro";
+---
+
+<header class="flex justify-center w-full fixed z-40">
+  <nav
+    class="flex items-center justify-between py-1 px-12 w-full max-w-[1920px]"
+  >
+    <picture class="flex w-[120px] h-[32px]">
+      <LogoTesla id="logoTesla" class="w-full fill-white" />
+    </picture>
+
+    <ul id="contentNav" class="flex group text-center">
+      <ButtonNavBar id="linkVehiculos" content="Vehiculos" />
+      <ButtonNavBar id="linkEnergia" content="Energia" />
+      <ButtonNavBar id="linkCarga" content="Carga" />
+      <ButtonNavBar id="linkDescubri" content="Descubri" />
+      <ButtonNavBar id="linkTienda" content="Tienda" />
+    </ul>
+
+    <ul class="flex items-center gap-4">
+      <IconNavBar href="/">
+        <IconHelp class="fill-white icon w-6" />
+      </IconNavBar>
+      <IconNavBar href="/">
+        <IconGlobe class="fill-white icon w-6" />
+      </IconNavBar>
+      <IconNavBar href="/">
+        <IconPerson class="fill-white icon w-6" />
+      </IconNavBar>
+    </ul>
+  </nav>
+</header>
+
+<div
+  id="menuhidden"
+  class="bg-white w-full h-max fixed -translate-y-full right-0 z-10 transition-all duration-300"
+>
+  <div id="content" class="w-full">
+    <div id="empty" class="w-full flex gap-16 py-24 px-44"></div>
+
+    <div id="contentVehiculos" class="w-full hidden">
+      <div class="grid place-content-center grid-cols-auto-nav w-full">
+        <CardCar
+          href="/"
+          alt="."
+          model="Model S"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-S.png"
+        />
+
+        <CardCar
+          href="/"
+          alt="."
+          model="Model 3"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-3-LHD.png"
+        />
+
+        <CardCar
+          href="/"
+          alt="."
+          model="Model X"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-X.png"
+        />
+
+        <CardCar
+          href="/"
+          alt="."
+          model="Model Y"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-Y.png"
+        />
+
+        <CardCar
+          href="/"
+          alt="."
+          model="Cybertruck"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Cybertruck-1x.png"
+        />
+      </div>
+      <span class="h-64 w-[1px] bg-black/10"></span>
+      <div class="flex w-[30%] text-black/80 flex-col gap-2 font-medium mt-2">
+        <LinksRightCar href="/" content="Inventory" />
+        <LinksRightCar href="/" content="Used Cars" />
+        <LinksRightCar href="/" content="Demo Drive" />
+        <LinksRightCar href="/" content="Trade-in" />
+        <LinksRightCar href="/" content="Compare" />
+        <LinksRightCar href="/" content="Help Me Charge" />
+        <LinksRightCar href="/" content="Fleet" />
+        <LinksRightCar href="/" content="Semi" />
+        <LinksRightCar href="/" content="Roadster" />
+      </div>
+    </div>
+
+    <div id="contentEnergia" class="w-full hidden">
+      <div class="grid place-content-center grid-cols-auto-nav w-full">
+        <CardCar
+          href="/"
+          alt="."
+          model="Paneles Solares"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Solar-Panels.png"
+        />
+
+        <CardCar
+          href="/"
+          alt="."
+          model="Tejado Solar"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Solar-Panels.png"
+        />
+
+        <CardCar
+          href="/"
+          alt="."
+          model="Powerwall"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Powerwall-US.png"
+        />
+
+        <CardCar
+          href="/"
+          alt="."
+          model="MegaPack"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Megapack.png"
+        />
+      </div>
+      <span class="h-64 w-[1px] bg-black/10"></span>
+      <div class="flex w-[30%] text-black/80 flex-col gap-2 font-medium mt-2">
+        <LinksRightCar href="/" content="Why Solar" />
+        <LinksRightCar href="/" content="Used Cars" />
+        <LinksRightCar href="/" content="Demo Drive" />
+        <LinksRightCar href="/" content="Trade-in" />
+        <LinksRightCar href="/" content="Compare" />
+        <LinksRightCar href="/" content="Help Me Charge" />
+        <LinksRightCar href="/" content="Fleet" />
+        <LinksRightCar href="/" content="Semi" />
+        <LinksRightCar href="/" content="Roadster" />
+      </div>
+    </div>
+
+    <div id="contentCarga" class="w-full hidden">
+      <div class="grid place-content-center grid-cols-auto-nav w-full">
+        <CardCar
+          href="/"
+          alt="."
+          model="Model S"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Charging.png"
+        />
+
+        <CardCar
+          href="/"
+          alt="."
+          model="Model 3"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Home-Charging.png"
+        />
+
+        <CardCar
+          href="/"
+          alt="."
+          model="Model X"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Supercharging-NA.png"
+        />
+      </div>
+      <span class="h-64 w-[1px] bg-black/10"></span>
+      <div class="flex w-[30%] text-black/80 flex-col gap-2 font-medium mt-2">
+        <LinksRightCar href="/" content="Carga" />
+        <LinksRightCar href="/" content="Used Cars" />
+        <LinksRightCar href="/" content="Demo Drive" />
+        <LinksRightCar href="/" content="Trade-in" />
+        <LinksRightCar href="/" content="Compare" />
+        <LinksRightCar href="/" content="Help Me Charge" />
+        <LinksRightCar href="/" content="Fleet" />
+        <LinksRightCar href="/" content="Semi" />
+        <LinksRightCar href="/" content="Roadster" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const links = document.querySelectorAll("nav ul li button");
+  const icons = document.querySelectorAll(".icon");
+  const menuHidden = document.querySelector("#menuhidden");
+  const logoTesla = document.querySelector("#logoTesla");
+  const hero = document.querySelector("#hero");
+  const body = document.querySelector("#body");
+  const containerHero = document.querySelector("#containerHero");
+  const contentVehiculo = document.querySelector("#contentVehiculos");
+  const contentEnergia = document.querySelector("#contentEnergia");
+  const contentCarga = document.querySelector("#contentCarga");
+  const contentEmpty = document.querySelector("#empty");
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      menuHidden.classList.remove("-translate-y-full");
+    });
+  });
+
+  links.forEach((link) => {
+    link.addEventListener("mouseover", () => {
+      if (link.getAttribute("id") === "linkVehiculos") {
+        contentEmpty.innerHTML = contentVehiculo.innerHTML;
+      } else if (link.getAttribute("id") === "linkEnergia") {
+        contentEmpty.innerHTML = contentEnergia.innerHTML;
+      } else if (link.getAttribute("id") === "linkCarga") {
+        contentEmpty.innerHTML = contentCarga.innerHTML;
+      }
+      links.forEach((link) => {
+        link.classList.remove("text-white");
+        link.classList.add("text-black");
+      });
+      icons.forEach((icon) => {
+        icon.classList.remove("fill-white");
+        icon.classList.add("fill-black");
+      });
+      containerHero.classList.add("backdrop-blur-[4px]", "blur-[4px]");
+      menuHidden.classList.remove("-translate-y-full");
+      logoTesla.classList.remove("fill-white");
+      body.classList.add("overflow-hidden");
+    });
+  });
+
+  hero.addEventListener("mouseover", () => {
+    links.forEach((link) => {
+      link.classList.remove("text-black");
+      link.classList.add("text-white");
+      // link.classList.remove(
+      //     "bg-gray-300",
+      //     "rounded-md",
+      //     "bg-clip-padding",
+      //     "backdrop-filter",
+      //     "backdrop-blur-sm",
+      //     "bg-opacity-40"
+      //   );
+    });
+    icons.forEach((icon) => {
+      icon.classList.remove("fill-black");
+      icon.classList.add("fill-white");
+    });
+    containerHero.classList.remove("backdrop-blur-[4px]", "blur-[4px]");
+    logoTesla.classList.add("fill-white");
+    menuHidden.classList.add("-translate-y-full");
+    body.classList.remove("overflow-hidden");
+  });
+</script>

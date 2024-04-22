@@ -1,0 +1,17 @@
+---
+const { content, id } = Astro.props;
+---
+
+<li class="my-3">
+  <button
+    {id}
+    class="link font-medium text-white
+    px-3 py-1 hover:bg-gray-300
+    hover:rounded-md
+    hover:bg-clip-padding
+    hover:backdrop-filter
+    hover:backdrop-blur-sm hover:bg-opacity-40"
+    >{content}</button
+  >
+</li> 
+

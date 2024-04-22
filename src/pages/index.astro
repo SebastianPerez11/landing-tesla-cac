@@ -1,8 +1,109 @@
 ---
-	import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
+import ButtonPrimary from "../components/ButtonPrimary.astro";
+import Header from "../components/Header.astro";
 ---
 
-<Layout title="Landing Tesla" >
-	<a href="/autos/">click</a>
-</Layout>
+<Layout title="Landing Tesla">
+  <main>
+    <!-- Seba-Hero-Section -->
 
+    <Header/>
+    
+    <section id="hero" class="block w-full h-screen relative">
+      <video
+        class="absolute w-full h-full object-cover"
+        muted
+        autoplay="true"
+        loop
+        id="video"
+      >
+        <source
+          src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto/Homepage-Model-Y-Promo-Desktop-v2.mp4#t=0.01#t=0.01"
+        />
+      </video>
+      <div
+        id="containerHero"
+        class="flex flex-col justify-end py-40 px-12 absolute h-full w-full text-white"
+      >
+        <header>
+          <h1 class="text-[40px] w-max font-semibold mb-5 leading-tight">
+            Model Y Starting at $37,490 <br /> After Federal Tax Credit
+          </h1>
+          <p class="w-[66ch] font-medium">
+            Eligible buyers qualify for a $7,500 federal tax credit. Applied at
+            time of Model Y <br /> delivery. <a class="underline" href="/"
+              >See Details</a
+            >
+          </p>
+        </header>
+
+        <footer class="mt-10">
+          <ButtonPrimary
+            href="/"
+            class="bg-white/90 text-black/90"
+            content="Shop Available"
+          />
+
+          <ButtonPrimary
+            href="/"
+            class="bg-black/90 text-white"
+            content="Demo Drive"
+          />
+        </footer>
+      </div>
+    </section>
+
+    <section id="carrusel2" class="block w-full h-screen relative">
+      <video
+        class="absolute w-full h-full object-cover"
+        muted
+        autoplay="true"
+        loop
+        id="video"
+      >
+        <source
+          src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto/Homepage-Model-Y-Promo-Desktop-v2.mp4#t=0.01#t=0.01"
+        />
+      </video>
+      <div
+        class="flex flex-col justify-end py-40 px-12 absolute h-full w-full text-white"
+      >
+        <header>
+          <h1 class="text-[40px] w-max font-semibold mb-5 leading-tight">
+            Model Y Starting at $37,490 <br /> After Federal Tax Credit
+          </h1>
+          <p class="w-[66ch] font-medium">
+            Eligible buyers qualify for a $7,500 federal tax credit. Applied at
+            time of Model Y <br /> delivery. <a class="underline" href="/"
+              >See Details</a
+            >
+          </p>
+        </header>
+
+        <footer class="mt-10">
+          <ButtonPrimary
+            class="bg-white/90 text-black/90"
+            href="/"
+            content="Shop Available"
+          />
+
+          <ButtonPrimary
+            href="/"
+            class="bg-black/90 text-white/90"
+            content="Demo Drive"
+          />
+        </footer>
+      </div>
+    </section>
+
+    <!-- Fran-Section -->
+    <section></section>
+
+    <!-- Nahu Section -->
+    <section></section>
+
+    <!-- Grupal-->
+    <footer></footer>
+  </main>
+</Layout>
