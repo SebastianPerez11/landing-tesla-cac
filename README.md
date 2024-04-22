@@ -1,8 +1,8 @@
-# Landing Page Tesla = CAC
+# Landing Page Tesla - CAC
 
 ## Recreación de Landing page de Tesla, empresa multinacional estadounidense de automoción y energía limpias, fabrica y vende vehículos eléctricos, dispositivos estacionarios de almacenamiento de energía en baterías desde el hogar hasta la escala de red, paneles solares y tejas solares, y productos y productos relacionados. servicios.
 
-(https://upload.wikimedia.org/wikipedia/commons/e/e8/Tesla_logo.png)
+![Tesla](https://upload.wikimedia.org/wikipedia/commons/e/e8/Tesla_logo.png)
 
 ### Descripción general
 
@@ -25,7 +25,7 @@ Se desarrollo una landing page dónde se encuentra la información más importan
 
 ### Deploy
 
-(https://landing-tesla-cac.vercel.app/)
+https://landing-tesla-cac.vercel.app/
 
 ### Contacto de Desarrolladores/as
 
