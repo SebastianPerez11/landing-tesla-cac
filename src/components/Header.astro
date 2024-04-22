@@ -3,7 +3,7 @@ import LogoTesla from "../svg/LogoTesla.astro";
 import IconPerson from "../svg/IconPerson.astro";
 import IconGlobe from "../svg/IconGlobe.astro";
 import IconHelp from "../svg/IconHelp.astro";
-import CardCar from "../components/CardCar.astro";
+import CardNavBar from "./CardNavBar.astro";
 import IconNavBar from "./IconNavBar.astro";
 import ButtonNavBar from "./ButtonNavBar.astro";
 import LinksRightCar from "./LinksRightCar.astro";
@@ -44,41 +44,46 @@ import LinksRightCar from "./LinksRightCar.astro";
   class="bg-white w-full h-max fixed -translate-y-full right-0 z-10 transition-all duration-300"
 >
   <div id="content" class="w-full">
-    <div id="empty" class="w-full flex gap-16 py-24 px-44"></div>
+    <div id="empty" class="w-full flex gap-16 py-[86px] px-44"></div>
 
     <div id="contentVehiculos" class="w-full hidden">
       <div class="grid place-content-center grid-cols-auto-nav w-full">
-        <CardCar
+        <CardNavBar
           href="/"
-          alt="."
+          alt="Model S"
+          title="Model S"
           model="Model S"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-S.png"
         />
 
-        <CardCar
+        <CardNavBar
           href="/"
-          alt="."
+          alt="Model 3"
+          title="Model 3"
           model="Model 3"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-3-LHD.png"
         />
 
-        <CardCar
+        <CardNavBar
           href="/"
-          alt="."
+          alt="Model X"
+          title="Model X"
           model="Model X"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-X.png"
         />
 
-        <CardCar
+        <CardNavBar
           href="/"
-          alt="."
+          alt="Model Y"
+          title="Model Y"
           model="Model Y"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-Y.png"
         />
 
-        <CardCar
+        <CardNavBar
           href="/"
-          alt="."
+          alt="Cybertruck"
+          title="Cybertruck"
           model="Cybertruck"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Cybertruck-1x.png"
         />
@@ -99,30 +104,34 @@ import LinksRightCar from "./LinksRightCar.astro";
 
     <div id="contentEnergia" class="w-full hidden">
       <div class="grid place-content-center grid-cols-auto-nav w-full">
-        <CardCar
+        <CardNavBar
           href="/"
-          alt="."
+          alt="Paneles Solares"
+          title="Paneles Solares"
           model="Paneles Solares"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Solar-Panels.png"
         />
 
-        <CardCar
+        <CardNavBar
           href="/"
-          alt="."
+          alt="Tejado Solar"
+          title="Tejado Solar"
           model="Tejado Solar"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Solar-Panels.png"
         />
 
-        <CardCar
+        <CardNavBar
           href="/"
-          alt="."
+          alt="Powerwall"
+          title="Powerwall"
           model="Powerwall"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Powerwall-US.png"
         />
 
-        <CardCar
+        <CardNavBar
           href="/"
-          alt="."
+          alt="MegaPack"
+          title="MegaPack"
           model="MegaPack"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Megapack.png"
         />
@@ -143,24 +152,27 @@ import LinksRightCar from "./LinksRightCar.astro";
 
     <div id="contentCarga" class="w-full hidden">
       <div class="grid place-content-center grid-cols-auto-nav w-full">
-        <CardCar
+        <CardNavBar
           href="/"
-          alt="."
-          model="Model S"
+          alt="Charging"
+          title="Charging"
+          model="Charging"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Charging.png"
         />
 
-        <CardCar
+        <CardNavBar
           href="/"
-          alt="."
-          model="Model 3"
+          alt="Home Charging"
+          title="Home Charging"
+          model="Home Charging"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Home-Charging.png"
         />
 
-        <CardCar
+        <CardNavBar
           href="/"
-          alt="."
-          model="Model X"
+          alt="Supercharging"
+          title="Supercharging"
+          model="Supercharging"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Supercharging-NA.png"
         />
       </div>
