@@ -44,10 +44,10 @@ import LinksRightCar from "./LinksRightCar.astro";
   class="bg-white w-full h-max fixed -translate-y-full right-0 z-10 transition-all duration-300"
 >
   <div id="content" class="w-full">
-    <div id="empty" class="w-full flex gap-16 mt-9 py-20 px-44"></div>
+    <div id="empty" class="w-full flex gap-16 py-24 px-44"></div>
 
-    <div id="contentVehiculos" class="w-full gap-16 mt-9 py-20 px-44 hidden">
-      <div class="grid grid-cols-auto-nav w-full">
+    <div id="contentVehiculos" class="w-full hidden">
+      <div class="grid place-content-center grid-cols-auto-nav w-full">
         <CardCar
           href="/"
           alt="."
@@ -97,41 +97,34 @@ import LinksRightCar from "./LinksRightCar.astro";
       </div>
     </div>
 
-    <div id="contentEnergia" class="w-full gap-16 mt-9 py-20 px-44 hidden">
-      <div class="grid grid-cols-auto-nav w-full">
+    <div id="contentEnergia" class="w-full hidden">
+      <div class="grid place-content-center grid-cols-auto-nav w-full">
         <CardCar
           href="/"
           alt="."
-          model="Model S"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-S.png"
+          model="Paneles Solares"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Solar-Panels.png"
         />
 
         <CardCar
           href="/"
           alt="."
-          model="Model 3"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-3-LHD.png"
+          model="Tejado Solar"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Solar-Panels.png"
         />
 
         <CardCar
           href="/"
           alt="."
-          model="Model X"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-X.png"
+          model="Powerwall"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Powerwall-US.png"
         />
 
         <CardCar
           href="/"
           alt="."
-          model="Model Y"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-Y.png"
-        />
-
-        <CardCar
-          href="/"
-          alt="."
-          model="Cybertruck"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Cybertruck-1x.png"
+          model="MegaPack"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Megapack.png"
         />
       </div>
       <span class="h-64 w-[1px] bg-black/10"></span>
@@ -148,41 +141,27 @@ import LinksRightCar from "./LinksRightCar.astro";
       </div>
     </div>
 
-    <div id="contentCarga" class="w-full gap-16 mt-9 py-20 px-44 hidden">
-      <div class="grid grid-cols-auto-nav w-full">
+    <div id="contentCarga" class="w-full hidden">
+      <div class="grid place-content-center grid-cols-auto-nav w-full">
         <CardCar
           href="/"
           alt="."
           model="Model S"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-S.png"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Charging.png"
         />
 
         <CardCar
           href="/"
           alt="."
           model="Model 3"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-3-LHD.png"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Home-Charging.png"
         />
 
         <CardCar
           href="/"
           alt="."
           model="Model X"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-X.png"
-        />
-
-        <CardCar
-          href="/"
-          alt="."
-          model="Model Y"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-Y.png"
-        />
-
-        <CardCar
-          href="/"
-          alt="."
-          model="Cybertruck"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Cybertruck-1x.png"
+          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Supercharging-NA.png"
         />
       </div>
       <span class="h-64 w-[1px] bg-black/10"></span>
@@ -214,7 +193,6 @@ import LinksRightCar from "./LinksRightCar.astro";
   const contentCarga = document.querySelector("#contentCarga");
   const contentEmpty = document.querySelector("#empty");
 
-
   links.forEach((link) => {
     link.addEventListener("click", () => {
       menuHidden.classList.remove("-translate-y-full");
@@ -225,24 +203,8 @@ import LinksRightCar from "./LinksRightCar.astro";
     link.addEventListener("mouseover", () => {
       if (link.getAttribute("id") === "linkVehiculos") {
         contentEmpty.innerHTML = contentVehiculo.innerHTML;
-        link.classList.add(
-          "bg-gray-300",
-          "rounded-md",
-          "bg-clip-padding",
-          "backdrop-filter",
-          "backdrop-blur-sm",
-          "bg-opacity-40"
-        );
       } else if (link.getAttribute("id") === "linkEnergia") {
         contentEmpty.innerHTML = contentEnergia.innerHTML;
-        link.classList.add(
-          "bg-gray-300",
-          "rounded-md",
-          "bg-clip-padding",
-          "backdrop-filter",
-          "backdrop-blur-sm",
-          "bg-opacity-40"
-        );
       } else if (link.getAttribute("id") === "linkCarga") {
         contentEmpty.innerHTML = contentCarga.innerHTML;
       }
@@ -265,14 +227,14 @@ import LinksRightCar from "./LinksRightCar.astro";
     links.forEach((link) => {
       link.classList.remove("text-black");
       link.classList.add("text-white");
-      link.classList.remove(
-        "bg-gray-300",
-        "rounded-md",
-        "bg-clip-padding",
-        "backdrop-filter",
-        "backdrop-blur-sm",
-        "bg-opacity-40"
-      );
+      // link.classList.remove(
+      //     "bg-gray-300",
+      //     "rounded-md",
+      //     "bg-clip-padding",
+      //     "backdrop-filter",
+      //     "backdrop-blur-sm",
+      //     "bg-opacity-40"
+      //   );
     });
     icons.forEach((icon) => {
       icon.classList.remove("fill-black");
