@@ -8,10 +8,10 @@ import TitleCyber from "../svg/TitleCyber.astro";
 
 <Layout title="Landing Tesla">
   <Header />
-  <main id="main" class="snap-mandatory snap-y ">
+  <main id="main">
     <!-- Seba-Hero-Section -->
 
-    <section id="hero" class="w-full h-screen relative snap-start">
+    <section id="hero" class="w-full h-screen relative">
       <video
         class="absolute w-full h-full object-cover"
         muted
@@ -25,21 +25,23 @@ import TitleCyber from "../svg/TitleCyber.astro";
       </video>
       <div
         id="containerHero"
-        class="flex flex-col justify-end py-40 px-12 absolute h-full w-full text-white"
+        class="flex flex-col justify-end py-40 px-12 absolute h-full w-full text-white max-sm:px-6 max-sm:py-10 backdrop-brightness-75"
       >
         <header>
-          <h1 class="text-[40px] w-max font-normal mb-5 leading-tight">
+          <h1
+            class="text-[40px] w-full font-normal mb-5 leading-tight max-md:text-3xl max-sm:text-[28px]"
+          >
             Model Y Starting at $37,490 <br /> After Federal Tax Credit
           </h1>
-          <p class="w-[66ch] font-medium">
+          <p class="w-full max-w-[50ch] font-medium max-sm:text-sm">
             Eligible buyers qualify for a $7,500 federal tax credit. Applied at
-            time of Model Y <br /> delivery. <a class="underline" href="/"
+            time of Model Y delivery. <a class="underline" href="/"
               >See Details</a
             >
           </p>
         </header>
 
-        <footer class="mt-10">
+        <footer class="mt-10 flex flex-wrap gap-4">
           <ButtonPrimary
             href="/"
             class="bg-white/90 text-black/90"
@@ -136,6 +138,7 @@ import TitleCyber from "../svg/TitleCyber.astro";
       title="Solar Panels"
       description="Schedule a Virtual Consultation"
       colorDescription="text-white text-sm"
+      colorTitle="text-white"
       class="bg-solar-panels text-white"
     />
 
@@ -148,15 +151,27 @@ import TitleCyber from "../svg/TitleCyber.astro";
 
     <SectionProducts title="Powerwall" class="bg-powerwall" />
 
-    <SectionProducts title="Accessories" class="bg-accessories" />
+    <SectionProducts title="Accessories" class="bg-accessories">
+      <slot slot="button">
+        <ButtonPrimary
+          href="/"
+          class="bg-white/90 text-black/90"
+          content="Shop Now"
+        />
+      </slot>
+    </SectionProducts>
 
-    <!-- Fran-Section -->
-    <section></section>
-
-    <!-- Nahu Section -->
-    <section></section>
-
-    <!-- Grupal-->
     <footer></footer>
   </main>
 </Layout>
+<style is:global>
+  main {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  section {
+    scroll-snap-align: start;
+  }
+</style>

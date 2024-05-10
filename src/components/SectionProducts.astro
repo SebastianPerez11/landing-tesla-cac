@@ -4,15 +4,16 @@ import ButtonPrimary from "./ButtonPrimary.astro";
 const {title, subtitle , description} = Astro.props;
 ---
 
-<section class=`${Astro.props.class} w-full h-screen bg-cover bg-center flex flex-col items-center relative snap-start`>
+<section class=`${Astro.props.class} w-full h-screen bg-cover bg-center flex flex-col items-center relative`>
     <header class="absolute top-[156px] text-center">
       <slot name="svg"/>
-      <h2 class="text-[40px] font-medium leading-tight">{title}</h2>
-      <span class="text-[20px] font-medium">{subtitle}</span>
+      <h2 class=`text-[40px] font-medium leading-tight text-black ${Astro.props.colorTitle}`>{title}</h2>
+      <span class="text-[20px] font-medium text-black">{subtitle}</span>
       <p class=`${Astro.props.colorDescription} text-xs text-black/80`>{description}</p>
     </header>
     <footer class="absolute bottom-28">
-      <ButtonPrimary
+      <slot name="button">
+        <ButtonPrimary
         href="/"
         class="bg-white/90 text-black/90"
         content="Order Now"
@@ -23,5 +24,6 @@ const {title, subtitle , description} = Astro.props;
         class="bg-black/60 text-white"
         content="Demo Drive"
       />
+      </slot>
     </footer>
   </section>

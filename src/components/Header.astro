@@ -9,15 +9,15 @@ import ButtonNavBar from "./ButtonNavBar.astro";
 import LinksRightCar from "./LinksRightCar.astro";
 ---
 
-<header class="flex justify-center w-full fixed z-40">
+<header class="flex justify-center items-center w-full fixed z-40 min-h-[72px]">
   <nav
-    class="flex items-center justify-between py-1 px-12 w-full max-w-[1920px]"
+    class="flex items-center justify-between py-2 px-12 w-full max-w-[1920px] max-sm:px-6"
   >
     <picture class="flex w-[120px] h-[32px]">
-      <LogoTesla id="logoTesla" class="w-full fill-white" />
+      <LogoTesla id="logoTesla" class="w-full h-full fill-white" />
     </picture>
 
-    <ul id="contentNav" class="flex group text-center">
+    <ul id="contentNav" class="flex group text-center max-xl:hidden">
       <ButtonNavBar id="linkVehiculos" content="Vehiculos" />
       <ButtonNavBar id="linkEnergia" content="Energia" />
       <ButtonNavBar id="linkCarga" content="Carga" />
@@ -25,7 +25,7 @@ import LinksRightCar from "./LinksRightCar.astro";
       <ButtonNavBar id="linkTienda" content="Tienda" />
     </ul>
 
-    <ul class="flex items-center gap-4">
+    <ul class="flex items-center gap-4 max-xl:hidden">
       <IconNavBar href="/">
         <IconHelp class="fill-white icon w-6" />
       </IconNavBar>
@@ -240,14 +240,6 @@ import LinksRightCar from "./LinksRightCar.astro";
     links.forEach((link) => {
       link.classList.remove("text-black");
       link.classList.add("text-white");
-      // link.classList.remove(
-      //     "bg-gray-300",
-      //     "rounded-md",
-      //     "bg-clip-padding",
-      //     "backdrop-filter",
-      //     "backdrop-blur-sm",
-      //     "bg-opacity-40"
-      //   );
     });
     icons.forEach((icon) => {
       icon.classList.remove("fill-black");
