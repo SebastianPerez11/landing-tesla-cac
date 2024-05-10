@@ -2,15 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 import ButtonPrimary from "../components/ButtonPrimary.astro";
 import Header from "../components/Header.astro";
+import SectionProducts from "../components/SectionProducts.astro";
+import TitleCyber from "../svg/TitleCyber.astro";
 ---
 
 <Layout title="Landing Tesla">
-  <main>
+  <Header />
+  <main id="main" class="snap-mandatory snap-y ">
     <!-- Seba-Hero-Section -->
 
-    <Header/>
-    
-    <section id="hero" class="block w-full h-screen relative">
+    <section id="hero" class="w-full h-screen relative snap-start">
       <video
         class="absolute w-full h-full object-cover"
         muted
@@ -27,7 +28,7 @@ import Header from "../components/Header.astro";
         class="flex flex-col justify-end py-40 px-12 absolute h-full w-full text-white"
       >
         <header>
-          <h1 class="text-[40px] w-max font-semibold mb-5 leading-tight">
+          <h1 class="text-[40px] w-max font-normal mb-5 leading-tight">
             Model Y Starting at $37,490 <br /> After Federal Tax Credit
           </h1>
           <p class="w-[66ch] font-medium">
@@ -54,7 +55,7 @@ import Header from "../components/Header.astro";
       </div>
     </section>
 
-    <section id="carrusel2" class="block w-full h-screen relative">
+    <!-- <section id="carrusel2" class="block w-full h-screen relative">
       <video
         class="absolute w-full h-full object-cover"
         muted
@@ -95,7 +96,59 @@ import Header from "../components/Header.astro";
           />
         </footer>
       </div>
-    </section>
+    </section> -->
+
+    <SectionProducts
+      title="Model Y"
+      subtitle="From $31,490"
+      description="After Federal Tax Credit & Est. Gas Savings"
+      class="bg-model-y"
+    />
+
+    <SectionProducts
+      title="Model 3"
+      subtitle="From $38,990"
+      description="Est. Lease subtitle Before Gas Savings"
+      class="bg-model-3"
+    />
+
+    <SectionProducts
+      title="Model X"
+      subtitle="From $63,990"
+      description="After Federal Tax Credit & Est. Gas Savings"
+      class="bg-model-x"
+    />
+
+    <SectionProducts
+      title="Model S"
+      subtitle="From $66,490"
+      description="After Est. Gas Savings"
+      class="bg-model-s"
+    />
+
+    <SectionProducts class="bg-model-cybertruck">
+      <slot slot="svg">
+        <TitleCyber />
+      </slot>
+    </SectionProducts>
+
+    <SectionProducts
+      title="Solar Panels"
+      description="Schedule a Virtual Consultation"
+      colorDescription="text-white text-sm"
+      class="bg-solar-panels text-white"
+    />
+
+    <SectionProducts
+      title="Solar Roof"
+      description="Produce Clean Energy From Your Roof"
+      colorDescription="text-sm"
+      class="bg-solar-roof"
+    />
+
+    <SectionProducts title="Powerwall" class="bg-powerwall" />
+
+    <SectionProducts title="Accessories" class="bg-accessories" />
 
     <!-- Fran-Section -->
     <section></section>

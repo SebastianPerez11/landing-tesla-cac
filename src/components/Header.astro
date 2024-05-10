@@ -199,6 +199,7 @@ import LinksRightCar from "./LinksRightCar.astro";
   const logoTesla = document.querySelector("#logoTesla");
   const hero = document.querySelector("#hero");
   const body = document.querySelector("#body");
+  const main = document.querySelector("#main");
   const containerHero = document.querySelector("#containerHero");
   const contentVehiculo = document.querySelector("#contentVehiculos");
   const contentEnergia = document.querySelector("#contentEnergia");
@@ -235,7 +236,7 @@ import LinksRightCar from "./LinksRightCar.astro";
     });
   });
 
-  hero.addEventListener("mouseover", () => {
+  main.addEventListener("mouseover", () => {
     links.forEach((link) => {
       link.classList.remove("text-black");
       link.classList.add("text-white");
