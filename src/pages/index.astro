@@ -104,31 +104,31 @@ import TitleCyber from "../svg/TitleCyber.astro";
       title="Model Y"
       subtitle="From $31,490"
       description="After Federal Tax Credit & Est. Gas Savings"
-      class="bg-model-y"
+      class="bg-model-y max-md:bg-model-y-mob max-md:bg-top"
     />
 
     <SectionProducts
       title="Model 3"
       subtitle="From $38,990"
       description="Est. Lease subtitle Before Gas Savings"
-      class="bg-model-3"
+      class="bg-model-3 max-md:bg-model-3-mob max-md:bg-top"
     />
 
     <SectionProducts
       title="Model X"
       subtitle="From $63,990"
       description="After Federal Tax Credit & Est. Gas Savings"
-      class="bg-model-x"
+      class="bg-model-x max-md:bg-model-x-mob max-md:bg-top"
     />
 
     <SectionProducts
       title="Model S"
       subtitle="From $66,490"
       description="After Est. Gas Savings"
-      class="bg-model-s"
+      class="bg-model-s max-md:bg-model-s-mob max-md:bg-top"
     />
 
-    <SectionProducts class="bg-model-cybertruck">
+    <SectionProducts class="bg-model-cybertruck max-md:bg-model-cybertruck-mob max-md:bg-top">
       <slot slot="svg">
         <TitleCyber />
       </slot>
@@ -139,19 +139,19 @@ import TitleCyber from "../svg/TitleCyber.astro";
       description="Schedule a Virtual Consultation"
       colorDescription="text-white text-sm"
       colorTitle="text-white"
-      class="bg-solar-panels text-white"
+      class="bg-solar-panels text-white max-md:bg-solar-panels-mob max-md:bg-top"
     />
 
     <SectionProducts
       title="Solar Roof"
       description="Produce Clean Energy From Your Roof"
       colorDescription="text-sm"
-      class="bg-solar-roof"
+      class="bg-solar-roof max-md:bg-solar-roof-mob max-md:bg-top"
     />
 
-    <SectionProducts title="Powerwall" class="bg-powerwall" />
+    <SectionProducts title="Powerwall" class="bg-powerwall max-md:bg-powerwall-mob max-md:bg-top" />
 
-    <SectionProducts title="Accessories" class="bg-accessories">
+    <SectionProducts title="Accessories" class="bg-accessories max-md:bg-accessories-mob max-md:bg-top">
       <slot slot="button">
         <ButtonPrimary
           href="/"

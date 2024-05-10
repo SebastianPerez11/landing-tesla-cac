@@ -7,19 +7,19 @@ const { title, subtitle, description } = Astro.props;
 <section
   class=`${Astro.props.class} w-full h-dvh bg-cover bg-center flex flex-col items-center relative`
 >
-  <header class="absolute top-[156px] text-center">
+  <header class="absolute top-[156px] max-sm:top-[116px] text-center">
     <slot name="svg" />
     <h2
-      class=`text-[40px] font-medium leading-tight text-black ${Astro.props.colorTitle}`
+      class=`text-[40px] max-sm:text-[34px] font-medium leading-tight text-black ${Astro.props.colorTitle}`
     >
       {title}
     </h2>
-    <span class="text-[20px] font-medium text-black">{subtitle}</span>
-    <p class=`${Astro.props.colorDescription} text-xs text-black/80`>
+    <span class="text-[20px] max-sm:text-[16px] font-medium text-black">{subtitle}</span>
+    <p class=`${Astro.props.colorDescription} text-xs max-sm:text-[10px] text-black/80`>
       {description}
     </p>
   </header>
-  <footer class="absolute bottom-28">
+  <footer class="absolute bottom-28 flex flex-wrap gap-4 px-12 max-sm:px-6 max-sm:bottom-12">
     <slot name="button">
       <ButtonPrimary
         href="/"
