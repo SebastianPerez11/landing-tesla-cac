@@ -22,15 +22,14 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body id="body" class="font-gotham snap-y snap-mandatory">
+  <body id="body" class="font-gotham">
     <slot />
   </body>
 </html>
 <style is:global>
   html {
     scroll-behavior: smooth;
-    scrollbar-gutter: inherit;
-    color-scheme: light dark;
+    color-scheme: light;
     font-family: "Gotham SSm A";
   }
 

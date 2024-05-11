@@ -25,7 +25,7 @@ import TitleCyber from "../svg/TitleCyber.astro";
       </video>
       <div
         id="containerHero"
-        class="flex flex-col justify-end py-40 px-12 absolute h-full w-full text-white max-sm:px-6 max-sm:py-10 backdrop-brightness-75"
+        class="flex flex-col justify-end py-40 px-12 absolute h-full w-full text-white max-2xl:p-16 max-sm:px-6 max-sm:py-10 backdrop-brightness-75"
       >
         <header>
           <h1
@@ -165,13 +165,9 @@ import TitleCyber from "../svg/TitleCyber.astro";
   </main>
 </Layout>
 <style is:global>
-  main {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-  }
 
   section {
     scroll-snap-align: start;
   }
+
 </style>
