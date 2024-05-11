@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			gridTemplateColumns: {
-				'auto-nav': 'repeat(auto-fit, minmax(260px, 1fr))',
+				'auto-nav': 'repeat(auto-fit, minmax(200px, 1fr))',
 			},
 			backgroundImage: {
 				'model-y': "url('https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-Y-Desktop-Global.png')",
