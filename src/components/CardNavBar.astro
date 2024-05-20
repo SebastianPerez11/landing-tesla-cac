@@ -11,9 +11,11 @@ const {image, alt, model, href, title } = Astro.props;
       title={title}
     />
     </a>
-    <span class="text-lg font-semibold">{model}</span>
-    <footer class="text-base">
-      <a class="opacity-75 underline border-b-1 mr-3" href="/">Learn</a>
-      <a class="opacity-75 underline border-b-1" href="/">Order</a>
+    <span class="text-lg font-normal">{model}</span>
+    <footer class="text-sm">
+      <slot name="links">
+        <a class="opacity-75 underline border-b-1 mr-3 hover:opacity-100" href="/">Aprender</a>
+        <a class="opacity-75 underline border-b-1 hover:opacity-100" href="/">Ordenar</a>
+      </slot>
     </footer>
   </div>

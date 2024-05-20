@@ -31,12 +31,16 @@ import TitleCyber from "../svg/TitleCyber.astro";
           <h1
             class="text-[40px] w-full font-normal mb-5 leading-tight max-md:text-3xl max-sm:text-[28px]"
           >
-            Model Y Starting at $37,490 <br /> After Federal Tax Credit
+            Modelo Y desde $37,490 <br />
+            después del crédito fiscal federal
           </h1>
           <p class="w-full max-w-[50ch] font-medium max-sm:text-sm">
-            Eligible buyers qualify for a $7,500 federal tax credit. Applied at
-            time of Model Y delivery. <a class="underline" href="/"
-              >See Details</a
+            Los compradores elegibles califican para un crédito fiscal federal
+            de $7,500. Aplicado en el momento de la entrega del Modelo Y. <a
+              class="underline"
+              href="/"
+            >
+              Ver detalles</a
             >
           </p>
         </header>
@@ -45,13 +49,13 @@ import TitleCyber from "../svg/TitleCyber.astro";
           <ButtonPrimary
             href="/"
             class="bg-white/90 text-black/90"
-            content="Shop Available"
+            content="Disponible en Tienda"
           />
 
           <ButtonPrimary
             href="/"
             class="bg-black/90 text-white"
-            content="Demo Drive"
+            content="Unidad de Demostración"
           />
         </footer>
       </div>
@@ -102,35 +106,37 @@ import TitleCyber from "../svg/TitleCyber.astro";
 
     <SectionProducts
       title="Model Y"
-      subtitle="From $31,490"
+      subtitle="Desde $31,490"
       description="After Federal Tax Credit & Est. Gas Savings"
       class="bg-model-y max-md:bg-model-y-mob max-md:bg-top"
     />
 
     <SectionProducts
       title="Model 3"
-      subtitle="From $38,990"
+      subtitle="Desde $38,990"
       description="Est. Lease subtitle Before Gas Savings"
       class="bg-model-3 max-md:bg-model-3-mob max-md:bg-top"
     />
 
     <SectionProducts
       title="Model X"
-      subtitle="From $63,990"
+      subtitle="Desde $63,990"
       description="After Federal Tax Credit & Est. Gas Savings"
       class="bg-model-x max-md:bg-model-x-mob max-md:bg-top"
     />
 
     <SectionProducts
       title="Model S"
-      subtitle="From $66,490"
+      subtitle="Desde $66,490"
       description="After Est. Gas Savings"
       class="bg-model-s max-md:bg-model-s-mob max-md:bg-top"
     />
 
-    <SectionProducts class="bg-model-cybertruck max-md:bg-model-cybertruck-mob max-md:bg-top">
+    <SectionProducts
+      class="bg-model-cybertruck max-md:bg-model-cybertruck-mob max-md:bg-top"
+    >
       <slot slot="svg">
-        <TitleCyber class=" h-44 w-[620px] max-sm:w-80"/>
+        <TitleCyber class="h-44 w-[620px] max-sm:w-80" />
       </slot>
     </SectionProducts>
 
@@ -149,14 +155,20 @@ import TitleCyber from "../svg/TitleCyber.astro";
       class="bg-solar-roof max-md:bg-solar-roof-mob max-md:bg-top"
     />
 
-    <SectionProducts title="Powerwall" class="bg-powerwall max-md:bg-powerwall-mob max-md:bg-top" />
+    <SectionProducts
+      title="Powerwall"
+      class="bg-powerwall max-md:bg-powerwall-mob max-md:bg-top"
+    />
 
-    <SectionProducts title="Accessories" class="bg-accessories max-md:bg-accessories-mob max-md:bg-top">
+    <SectionProducts
+      title="Accessories"
+      class="bg-accessories max-md:bg-accessories-mob max-md:bg-top"
+    >
       <slot slot="button">
         <ButtonPrimary
           href="/"
           class="bg-white/90 text-black/90"
-          content="Shop Now"
+          content="Ir a Tienda"
         />
       </slot>
     </SectionProducts>
@@ -165,9 +177,7 @@ import TitleCyber from "../svg/TitleCyber.astro";
   </main>
 </Layout>
 <style is:global>
-
   section {
     scroll-snap-align: start;
   }
-
 </style>
