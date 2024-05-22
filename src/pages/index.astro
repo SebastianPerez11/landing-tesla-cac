@@ -8,19 +8,19 @@ import TitleCyber from "../svg/TitleCyber.astro";
 
 <Layout title="Landing Tesla">
   <Header />
-  <main id="main">
+  <main id="main" class="snap-y snap-mandatory relative w-full h-screen overflow-auto">
     <!-- Seba-Hero-Section -->
 
-    <section id="hero" class="w-full h-dvh relative">
+    <section id="hero" class="snap-center w-full h-dvh relative">
       <video
         class="absolute w-full h-full object-cover"
         muted
-        autoplay="true"
+        autoplay
         loop
         id="video"
       >
         <source
-          src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto/Homepage-Model-Y-Promo-Desktop-v2.mp4#t=0.01#t=0.01"
+          src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto/Homepage-Model-Y-Promo-Desktop-v2.mp4"
         />
       </video>
       <div
@@ -105,30 +105,30 @@ import TitleCyber from "../svg/TitleCyber.astro";
     </section> -->
 
     <SectionProducts
-      title="Model Y"
+      title="Modelo Y"
       subtitle="Desde $31,490"
-      description="After Federal Tax Credit & Est. Gas Savings"
+      description="Después del crédito fiscal federal y el cálculo estimado."
       class="bg-model-y max-md:bg-model-y-mob max-md:bg-top"
     />
 
     <SectionProducts
-      title="Model 3"
+      title="Modelo 3"
       subtitle="Desde $38,990"
-      description="Est. Lease subtitle Before Gas Savings"
+      description="Est. Subtítulo de arrendamiento antes del ahorro de gasolina"
       class="bg-model-3 max-md:bg-model-3-mob max-md:bg-top"
     />
 
     <SectionProducts
-      title="Model X"
+      title="Modelo X"
       subtitle="Desde $63,990"
-      description="After Federal Tax Credit & Est. Gas Savings"
+      description="Después del crédito fiscal federal y el cálculo estimado."
       class="bg-model-x max-md:bg-model-x-mob max-md:bg-top"
     />
 
     <SectionProducts
-      title="Model S"
+      title="Modelo S"
       subtitle="Desde $66,490"
-      description="After Est. Gas Savings"
+      description="Después de Est. Ahorro de gasolina"
       class="bg-model-s max-md:bg-model-s-mob max-md:bg-top"
     />
 
@@ -141,27 +141,27 @@ import TitleCyber from "../svg/TitleCyber.astro";
     </SectionProducts>
 
     <SectionProducts
-      title="Solar Panels"
-      description="Schedule a Virtual Consultation"
+      title="Paneles Solares"
+      description="Programe una consulta virtual"
       colorDescription="text-white text-sm"
       colorTitle="text-white"
       class="bg-solar-panels text-white max-md:bg-solar-panels-mob max-md:bg-top"
     />
 
     <SectionProducts
-      title="Solar Roof"
-      description="Produce Clean Energy From Your Roof"
+      title="Techo Solar"
+      description="Produzca energía limpia desde su techo"
       colorDescription="text-sm"
       class="bg-solar-roof max-md:bg-solar-roof-mob max-md:bg-top"
     />
 
     <SectionProducts
-      title="Powerwall"
+      title="Pared Electrica"
       class="bg-powerwall max-md:bg-powerwall-mob max-md:bg-top"
     />
 
     <SectionProducts
-      title="Accessories"
+      title="Accesorios"
       class="bg-accessories max-md:bg-accessories-mob max-md:bg-top"
     >
       <slot slot="button">
