@@ -11,7 +11,7 @@ import TitleCyber from "../svg/TitleCyber.astro";
   <main id="main" class="snap-y snap-mandatory relative w-full h-screen overflow-auto">
     <!-- Seba-Hero-Section -->
 
-    <section id="hero" class="snap-center w-full h-dvh relative">
+    <section data-header-color="white" id="hero" class="landing-section snap-center w-full h-dvh relative">
       <video
         class="absolute w-full h-full object-cover"
         muted
@@ -108,6 +108,7 @@ import TitleCyber from "../svg/TitleCyber.astro";
       title="Modelo Y"
       subtitle="Desde $31,490"
       description="Después del crédito fiscal federal y el cálculo estimado."
+      colorHeader="black"
       class="bg-model-y max-md:bg-model-y-mob max-md:bg-top"
     />
 
@@ -115,6 +116,7 @@ import TitleCyber from "../svg/TitleCyber.astro";
       title="Modelo 3"
       subtitle="Desde $38,990"
       description="Est. Subtítulo de arrendamiento antes del ahorro de gasolina"
+      colorHeader="black"
       class="bg-model-3 max-md:bg-model-3-mob max-md:bg-top"
     />
 
@@ -122,6 +124,7 @@ import TitleCyber from "../svg/TitleCyber.astro";
       title="Modelo X"
       subtitle="Desde $63,990"
       description="Después del crédito fiscal federal y el cálculo estimado."
+      colorHeader="black"
       class="bg-model-x max-md:bg-model-x-mob max-md:bg-top"
     />
 
@@ -129,11 +132,13 @@ import TitleCyber from "../svg/TitleCyber.astro";
       title="Modelo S"
       subtitle="Desde $66,490"
       description="Después de Est. Ahorro de gasolina"
+      colorHeader="white"
       class="bg-model-s max-md:bg-model-s-mob max-md:bg-top"
     />
 
     <SectionProducts
       class="bg-model-cybertruck max-md:bg-model-cybertruck-mob max-md:bg-top"
+      colorHeader="black"
     >
       <slot slot="svg">
         <TitleCyber class="h-44 w-[620px] max-sm:w-80" />
@@ -152,6 +157,7 @@ import TitleCyber from "../svg/TitleCyber.astro";
       title="Techo Solar"
       description="Produzca energía limpia desde su techo"
       colorDescription="text-sm"
+      colorHeader="black"
       class="bg-solar-roof max-md:bg-solar-roof-mob max-md:bg-top"
     />
 
@@ -163,6 +169,7 @@ import TitleCyber from "../svg/TitleCyber.astro";
     <SectionProducts
       title="Accesorios"
       class="bg-accessories max-md:bg-accessories-mob max-md:bg-top"
+      colorHeader="black"
     >
       <slot slot="button">
         <ButtonPrimary

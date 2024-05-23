@@ -1,11 +1,12 @@
 ---
 import ButtonPrimary from "./ButtonPrimary.astro";
 
-const { title, subtitle, description } = Astro.props;
+const { title, subtitle, description, colorHeader} = Astro.props;
 ---
 
 <section
-  class=`${Astro.props.class} snap-center w-full h-dvh bg-cover bg-center flex flex-col items-center relative`
+  data-header-color={colorHeader}
+  class=`${Astro.props.class} landing-section snap-center w-full h-screen bg-cover bg-center flex flex-col items-center relative`
 >
   <header class="absolute top-[156px] max-2xl:top-[60px] max-sm:top-[116px] text-center">
     <slot name="svg" />

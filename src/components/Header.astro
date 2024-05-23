@@ -10,12 +10,15 @@ import LinksRightCar from "./LinksRightCar.astro";
 import LinksDescubrir from "./LinksDescubrir.astro";
 ---
 
-<header class="flex justify-center items-center w-[99.5%] absolute z-40 min-h-[72px]">
+<header
+  id="landing-header"
+  class="flex justify-center items-center w-[99.5%] absolute z-40 min-h-[72px] text-white"
+>
   <nav
     class="flex items-center justify-between py-2 px-12 w-full max-w-[1920px] max-sm:px-6"
   >
     <picture class="flex w-[120px] h-[32px]">
-      <LogoTesla id="logoTesla" class="w-full h-full fill-white" />
+      <LogoTesla id="logoTesla" class="w-full h-full fill-current" />
     </picture>
 
     <ul id="contentNav" class="flex group text-center max-xl:hidden">
@@ -28,15 +31,22 @@ import LinksDescubrir from "./LinksDescubrir.astro";
 
     <ul class="flex items-center gap-4 max-xl:hidden">
       <IconNavBar href="/">
-        <IconHelp class="fill-white icon w-6" />
+        <IconHelp class="fill-current icon w-6" />
       </IconNavBar>
       <IconNavBar href="/">
-        <IconGlobe class="fill-white icon w-6" />
+        <IconGlobe class="fill-current icon w-6" />
       </IconNavBar>
       <IconNavBar href="/">
-        <IconPerson class="fill-white icon w-6" />
+        <IconPerson class="fill-current icon w-6" />
       </IconNavBar>
     </ul>
+
+    <button
+      id="menu"
+      class="xl:hidden backdrop-blur-3xl rounded-sm px-4 py-1 text-sm text-black bg-white/40"
+    >
+      Menu
+    </button>
   </nav>
 </header>
 
@@ -49,7 +59,9 @@ import LinksDescubrir from "./LinksDescubrir.astro";
     </div>
 
     <div id="contentVehiculos" class="w-full hidden">
-      <div class="grid place-content-center gap-10 grid-cols-auto-nav w-full mt-10 ">
+      <div
+        class="grid place-content-center gap-10 grid-cols-auto-nav w-full mt-10"
+      >
         <CardNavBar
           href="/"
           alt="Modelo S"
@@ -97,7 +109,10 @@ import LinksDescubrir from "./LinksDescubrir.astro";
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-HMC-RedBlue-LHD.png"
         >
           <slot slot="links">
-            <a class="opacity-75 underline border-b-1 hover:opacity-100" href="/">Empezar</a>
+            <a
+              class="opacity-75 underline border-b-1 hover:opacity-100"
+              href="/">Empezar</a
+            >
           </slot>
         </CardNavBar>
       </div>
@@ -116,7 +131,7 @@ import LinksDescubrir from "./LinksDescubrir.astro";
     </div>
 
     <div id="contentEnergia" class="w-full hidden">
-      <div class="grid place-content-center grid-cols-auto-nav w-full mt-10 ">
+      <div class="grid place-content-center grid-cols-auto-nav w-full mt-10">
         <CardNavBar
           href="/"
           alt="Paneles Solares"
@@ -162,7 +177,7 @@ import LinksDescubrir from "./LinksDescubrir.astro";
     </div>
 
     <div id="contentCarga" class="w-full hidden">
-      <div class="grid place-content-center grid-cols-auto-nav w-full mt-10 ">
+      <div class="grid place-content-center grid-cols-auto-nav w-full mt-10">
         <CardNavBar
           href="/"
           alt="Cargar"
@@ -235,9 +250,7 @@ import LinksDescubrir from "./LinksDescubrir.astro";
           model="Cargar"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Shop-Charging.png"
         >
-          <slot slot="links">
-
-          </slot>
+          <slot slot="links" />
         </CardNavBar>
         <CardNavBar
           href="/"
@@ -246,9 +259,7 @@ import LinksDescubrir from "./LinksDescubrir.astro";
           model="Accesorios para vehículos"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Shop-Vehicle-Accessories.png"
         >
-          <slot slot="links">
-  
-          </slot>
+          <slot slot="links" />
         </CardNavBar>
         <CardNavBar
           href="/"
@@ -257,9 +268,7 @@ import LinksDescubrir from "./LinksDescubrir.astro";
           model="Vestir"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Shop-Apparel.png"
         >
-          <slot slot="links">
-        
-          </slot></CardNavBar
+          <slot slot="links" /></CardNavBar
         >
         <CardNavBar
           href="/"
@@ -268,9 +277,7 @@ import LinksDescubrir from "./LinksDescubrir.astro";
           model="Estilo de Vida"
           image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Shop-Lifestyle.png"
         >
-          <slot slot="links">
-        
-          </slot></CardNavBar
+          <slot slot="links" /></CardNavBar
         >
       </div>
     </div>
@@ -340,6 +347,28 @@ import LinksDescubrir from "./LinksDescubrir.astro";
         menuHidden.classList.add("-translate-y-full");
         body.classList.remove("overflow-hidden");
       });
+
+      const $header = document.querySelector("#landing-header") as HTMLElement;
+
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const { isIntersecting } = entry;
+          if (isIntersecting) {
+            const color = entry.target.getAttribute("data-header-color");
+            $header.style.color = color;
+          }
+        });
+      }, observerOptions);
+
+      const $sections = document.querySelectorAll(".landing-section")
+
+      $sections.forEach((section) => observer.observe(section))
     </script>
   </div>
 </div>
