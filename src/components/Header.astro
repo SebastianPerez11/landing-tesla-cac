@@ -8,6 +8,8 @@ import IconNavBar from "./IconNavBar.astro";
 import ButtonNavBar from "./ButtonNavBar.astro";
 import LinksRightCar from "./LinksRightCar.astro";
 import LinksDescubrir from "./LinksDescubrir.astro";
+import { vehiculos } from "../js/vehiculos";
+import { Image } from "astro:assets";
 ---
 
 <header
@@ -62,45 +64,20 @@ import LinksDescubrir from "./LinksDescubrir.astro";
       <div
         class="grid place-content-center gap-10 grid-cols-auto-nav w-full mt-10"
       >
-        <CardNavBar
-          href="/"
-          alt="Modelo S"
-          title="Modelo S"
-          model="Modelo S"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-S.png"
-        />
+        {
+          vehiculos.map(({ id, alt, title, model, image }) => {
+            return (
+              <CardNavBar
+                href={id}
+                alt={alt}
+                title={title}
+                model={model}
+                image={image}
+              />
+            );
+          })
+        }
 
-        <CardNavBar
-          href="/"
-          alt="Modelo 3"
-          title="Modelo 3"
-          model="Modelo 3"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-3-LHD.png"
-        />
-
-        <CardNavBar
-          href="/"
-          alt="Modelo X"
-          title="Modelo X"
-          model="Modelo X"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-X.png"
-        />
-
-        <CardNavBar
-          href="/"
-          alt="Modelo Y"
-          title="Modelo Y"
-          model="Modelo Y"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-Y.png"
-        />
-
-        <CardNavBar
-          href="/"
-          alt="Cybertruck"
-          title="Cybertruck"
-          model="Cybertruck"
-          image="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Cybertruck-1x.png"
-        />
         <CardNavBar
           href="/"
           alt="Ayúdame a elegir"

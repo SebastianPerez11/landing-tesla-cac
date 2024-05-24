@@ -1,8 +1,8 @@
 ---
-const {image, alt, model, href, title } = Astro.props;
+const {id, image, alt, model, title } = Astro.props;
 ---
 <div class="flex flex-col items-center">
-    <a href={href}>
+    <a href={id}>
       <img
       class="w-56"
       src={image}
