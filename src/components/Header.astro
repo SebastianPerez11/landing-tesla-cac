@@ -12,7 +12,7 @@ import LinksDescubrir from "./LinksDescubrir.astro";
 
 <header
   id="landing-header"
-  class="flex justify-center items-center w-[99.5%] absolute z-40 min-h-[72px] text-white"
+  class="animate-fade-down flex justify-center items-center w-[99.5%] absolute z-40 min-h-[72px]"
 >
   <nav
     class="flex items-center justify-between py-2 px-12 w-full max-w-[1920px] max-sm:px-6"
@@ -52,7 +52,7 @@ import LinksDescubrir from "./LinksDescubrir.astro";
 
 <div
   id="menuhidden"
-  class="bg-white w-full h-max fixed -translate-y-full right-0 z-10 transition-all duration-300"
+  class="bg-white w-full h-max fixed -translate-y-full right-0 z-10 transition-all duration-500"
 >
   <div id="content" class="w-full">
     <div id="empty" class="w-full flex gap-16 py-[88px] px-64 max-2xl:px-28">
@@ -287,7 +287,6 @@ import LinksDescubrir from "./LinksDescubrir.astro";
       const icons = document.querySelectorAll(".icon");
       const menuHidden = document.querySelector("#menuhidden");
       const logoTesla = document.querySelector("#logoTesla");
-      const hero = document.querySelector("#hero");
       const body = document.querySelector("#body");
       const main = document.querySelector("#main");
       const containerHero = document.querySelector("#containerHero");
@@ -297,57 +296,6 @@ import LinksDescubrir from "./LinksDescubrir.astro";
       const contentDescubrir = document.querySelector("#contentDescubrir");
       const contentTienda = document.querySelector("#contentTienda");
       const contentEmpty = document.querySelector("#empty");
-
-      links.forEach((link) => {
-        link.addEventListener("click", () => {
-          menuHidden.classList.remove("-translate-y-full");
-        });
-      });
-
-      links.forEach((link) => {
-        link.addEventListener("mouseover", () => {
-          if (link.getAttribute("id") === "linkVehiculos") {
-            contentEmpty.innerHTML = contentVehiculo.innerHTML;
-          } else if (link.getAttribute("id") === "linkEnergia") {
-            contentEmpty.innerHTML = contentEnergia.innerHTML;
-          } else if (link.getAttribute("id") === "linkCarga") {
-            contentEmpty.innerHTML = contentCarga.innerHTML;
-          } else if (link.getAttribute("id") === "linkDescubrir") {
-            contentEmpty.innerHTML = contentDescubrir.innerHTML;
-          } else if (link.getAttribute("id") === "linkTienda") {
-            contentEmpty.innerHTML = contentTienda.innerHTML;
-          }
-
-          links.forEach((link) => {
-            link.classList.remove("text-white");
-            link.classList.add("text-black");
-          });
-          icons.forEach((icon) => {
-            icon.classList.remove("fill-white");
-            icon.classList.add("fill-black");
-          });
-          containerHero.classList.add("backdrop-blur-[4px]", "blur-[4px]");
-          menuHidden.classList.remove("-translate-y-full");
-          logoTesla.classList.remove("fill-white");
-          body.classList.add("overflow-hidden");
-        });
-      });
-
-      main.addEventListener("mouseover", () => {
-        links.forEach((link) => {
-          link.classList.remove("text-black");
-          link.classList.add("text-white");
-        });
-        icons.forEach((icon) => {
-          icon.classList.remove("fill-black");
-          icon.classList.add("fill-white");
-        });
-        containerHero.classList.remove("backdrop-blur-[4px]", "blur-[4px]");
-        logoTesla.classList.add("fill-white");
-        menuHidden.classList.add("-translate-y-full");
-        body.classList.remove("overflow-hidden");
-      });
-
       const $header = document.querySelector("#landing-header") as HTMLElement;
 
       const observerOptions = {
@@ -360,15 +308,71 @@ import LinksDescubrir from "./LinksDescubrir.astro";
         entries.forEach((entry) => {
           const { isIntersecting } = entry;
           if (isIntersecting) {
-            const color = entry.target.getAttribute("data-header-color");
+            let color = entry.target.getAttribute("data-header-color");
             $header.style.color = color;
+            if ((color = "white")) {
+              links.forEach((link) => {
+                link.addEventListener("mouseover", () => {
+                  if (link.getAttribute("id") === "linkVehiculos") {
+                    contentEmpty.innerHTML = contentVehiculo.innerHTML;
+                  } else if (link.getAttribute("id") === "linkEnergia") {
+                    contentEmpty.innerHTML = contentEnergia.innerHTML;
+                  } else if (link.getAttribute("id") === "linkCarga") {
+                    contentEmpty.innerHTML = contentCarga.innerHTML;
+                  } else if (link.getAttribute("id") === "linkDescubrir") {
+                    contentEmpty.innerHTML = contentDescubrir.innerHTML;
+                  } else if (link.getAttribute("id") === "linkTienda") {
+                    contentEmpty.innerHTML = contentTienda.innerHTML;
+                  }
+                  containerHero.classList.add(
+                    "backdrop-blur-[4px]",
+                    "blur-[4px]"
+                  );
+                  menuHidden.classList.remove("-translate-y-full");
+                  body.classList.add("overflow-hidden");
+                  logoTesla.classList.remove("fill-current");
+                  logoTesla.classList.add("fill-black");
+
+                  icons.forEach((icon) => {
+                    icon.classList.remove("fill-current");
+                    icon.classList.add("fill-black");
+                  });
+
+                  links.forEach((link) => {
+                    link.classList.remove("text-current");
+                    link.classList.add("text-black");
+                  });
+                });
+              });
+            }
           }
         });
       }, observerOptions);
 
-      const $sections = document.querySelectorAll(".landing-section")
+      const $sections = document.querySelectorAll(".landing-section");
 
-      $sections.forEach((section) => observer.observe(section))
+      $sections.forEach((section) => observer.observe(section));
+
+      // ----
+
+      links.forEach((link) => {
+        link.addEventListener("click", () => {
+          menuHidden.classList.remove("-translate-y-full");
+        });
+      });
+
+      main.addEventListener("mouseover", () => {
+        links.forEach((link) => {
+          link.classList.add("text-current");
+        });
+        icons.forEach((icon) => {
+          icon.classList.add("fill-current");
+        });
+        containerHero.classList.remove("backdrop-blur-[4px]", "blur-[4px]");
+        logoTesla.classList.add("fill-current");
+        menuHidden.classList.add("-translate-y-full");
+        body.classList.remove("overflow-hidden");
+      });
     </script>
   </div>
 </div>

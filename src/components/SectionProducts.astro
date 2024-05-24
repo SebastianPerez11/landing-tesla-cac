@@ -8,7 +8,7 @@ const { title, subtitle, description, colorHeader} = Astro.props;
   data-header-color={colorHeader}
   class=`${Astro.props.class} landing-section snap-center w-full h-screen bg-cover bg-center flex flex-col items-center relative`
 >
-  <header class="absolute top-[156px] max-2xl:top-[60px] max-sm:top-[116px] text-center">
+  <header id="titleSection" class="absolute top-[156px] max-2xl:top-[60px] max-sm:top-[116px] text-center">
     <slot name="svg" />
     <h2
       class=`text-[40px] max-sm:text-[34px] font-medium leading-tight text-black ${Astro.props.colorTitle}`
