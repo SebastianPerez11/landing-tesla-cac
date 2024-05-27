@@ -42,7 +42,9 @@ import TitleCyber from "../svg/TitleCyber.astro";
             Modelo Y desde $37,490 <br />
             después del crédito fiscal federal
           </h1>
-          <p class="animate-fade-right w-full max-w-[50ch] font-medium max-sm:text-sm">
+          <p
+            class="animate-fade-right w-full max-w-[50ch] font-medium max-sm:text-sm"
+          >
             Los compradores elegibles califican para un crédito fiscal federal
             de $7,500. Aplicado en el momento de la entrega del Modelo Y. <a
               class="underline"
@@ -146,11 +148,164 @@ import TitleCyber from "../svg/TitleCyber.astro";
       </slot>
     </SectionProducts>
 
-    <footer></footer>
+    <footer
+      class="landing-section snap-end w-full h-full flex justify-center pt-36"
+    >
+      <div
+        class="w-full flex justify-start items-center flex-col max-w-[1240px] px-6"
+      >
+        <header class="mb-14 w-full text-start">
+          <h6 class="text-4xl font-normal">Contacto</h6>
+        </header>
+
+        <footer class="flex w-full gap-4 max-sm:flex-wrap">
+          <div class="w-full flex flex-col">
+            <div class="flex flex-col gap-2 mb-6 text-base opacity-70">
+              <span class="font-semibold">Tesla Support & Safety</span>
+              <a class="underline" href=""
+                >información sobre llamadas e revisión</a
+              >
+            </div>
+            <div class="flex flex-col gap-2 mb-6 text-base opacity-70">
+              <span class="font-semibold">Bolsa de Trabajo</span>
+              <span>
+                <a class="underline" href="">Visita nuestra página de empleo</a>
+                para obtener una lista de las oportunidades de trabajo actuales</span
+              >
+            </div>
+            <div class="flex flex-col gap-2 mb-6 text-base opacity-70">
+              <span class="font-semibold"
+                >Equipos de respuesta a emergencias</span
+              >
+              <span
+                ><a class="underline" href=""
+                  >Visita nuestra página de primeros auxilios</a
+                > para descargar las guías de referencia de Tesla para el personal
+                de emergencia.</span
+              >
+            </div>
+          </div>
+
+          <div class="w-[50%]">
+            <div class="flex w-full flex-col gap-2 mb-6 text-base opacity-70">
+              <span class="font-semibold">Prensa</span>
+              <span>Continente Americano</span>
+              <a class="underline" href="">press@tesla.com</a>
+              <span>Europa y el Medio Oriente</span>
+              <a class="underline" href="">eupress@tesla.com</a>
+              <span>Australia y Asia</span>
+              <a class="underline" href="">apacpress@tesla.com</a>
+              <span>China</span>
+              <a class="underline" href="">china-press@tesla.com</a>
+            </div>
+          </div>
+        </footer>
+
+        <form data-astro-form class="w-full snap-end py-20">
+          <header class="mb-14 w-full text-start">
+            <h6 class="text-3xl font-normal">Rellene el Formulario</h6>
+          </header>
+
+          <div
+            class="grid w-full grid-cols-auto-form max-xl:grid-cols-auto-responsive gap-10 mb-10"
+          >
+            <span class="flex flex-col">
+              <label
+                class="font-semibold mb-3 text-base opacity-70"
+                for="nombreCompleto">Nombre:</label
+              >
+              <input
+                placeholder="Juan Perez"
+                class="border-b-2"
+                type="text"
+                id="nombreCompleto"
+                name="nombreCompleto"
+                required
+              />
+            </span>
+
+            <span class="flex flex-col">
+              <label class="font-semibold mb-3 text-base opacity-70" for="mail"
+                >Email:</label
+              >
+              <input
+                placeholder="juanperez@gmail.com"
+                class="border-b-2"
+                type="email"
+                id="mail"
+                name="mail"
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              />
+            </span>
+
+            <span class="flex flex-col">
+              <label
+                class="font-semibold mb-3 text-base opacity-70"
+                for="telefono">Teléfono:</label
+              >
+              <input
+                class="border-b-2"
+                type="tel"
+                id="telefono"
+                name="telefono"
+                required
+                pattern="[0-9]{10}"
+                placeholder="Cód Área + Num Celular"
+              />
+            </span>
+
+            <span class="flex flex-col">
+              <label
+                class="font-semibold mb-3 text-base opacity-70"
+                for="modelo">Modelo:</label
+              >
+              <select class="border-b-2" id="modelo" name="modelo" required>
+                <option value="">Seleccione un modelo</option>
+                <option value="modelo1">Seleccione un modelo 1</option>
+                <option value="modelo2">Seleccione un modelo 2</option>
+                <option value="modelo3">Seleccione un modelo 3</option>
+                <option value="modelo4">Seleccione un modelo 4</option>
+                <option value="modelo5">Seleccione un modelo 5</option>
+              </select>
+            </span>
+
+            <span class="flex flex-col">
+              <label
+                class="font-semibold mb-3 text-base opacity-70"
+                for="comentarios">Comentarios:</label
+              >
+              <textarea
+                placeholder="Agregue un comentario"
+                class="border-b-2 resize-none"
+                id="comentarios"
+                name="comentarios"
+                rows="3"
+                required></textarea>
+            </span>
+          </div>
+
+          <ButtonPrimary
+            href="/"
+            class="bg-black/90 text-white"
+            content="Enviar"
+          />
+        </form>
+        <span class="snap-end py-8 w-full text-center text-sm"
+          >Tesla © 2024 Privacidad y legal Contacto Ubicaciones</span
+        >
+      </div>
+    </footer>
   </main>
 </Layout>
 <style is:global>
   section {
     scroll-snap-align: start;
+  }
+  input,
+  textarea,
+  select {
+    padding: 0px 8px;
+    height: 50px;
   }
 </style>
