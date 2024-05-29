@@ -1,12 +1,12 @@
 ---
-const { href } = Astro.props;
+const { href, target } = Astro.props;
 ---
 
 <li
   class="w-6 flex items-center justify-center"
 >
   <a
-  target="_blank" 
+  target={target}
   class="hover:bg-gray-300
   hover:rounded-[4px]
   hover:bg-clip-padding
