@@ -6,7 +6,7 @@ import SectionProducts from "../components/SectionProducts.astro";
 import TitleCyber from "../svg/TitleCyber.astro";
 ---
 
-<Layout title="Landing Tesla">
+<Layout title="Tesla - Argentina">
   <Header />
 
   <main
@@ -149,6 +149,7 @@ import TitleCyber from "../svg/TitleCyber.astro";
     </SectionProducts>
 
     <footer
+      id="contact"
       class="landing-section snap-end w-full h-full flex justify-center pt-36"
     >
       <div
@@ -161,7 +162,7 @@ import TitleCyber from "../svg/TitleCyber.astro";
         <footer class="flex w-full gap-4 max-sm:flex-wrap">
           <div class="w-full flex flex-col">
             <div class="flex flex-col gap-2 mb-6 text-base opacity-70">
-              <span class="font-semibold">Tesla Support & Safety</span>
+              <span class="font-semibold">Soporte de Tesla</span>
               <a class="underline" href=""
                 >información sobre llamadas e revisión</a
               >
@@ -201,7 +202,7 @@ import TitleCyber from "../svg/TitleCyber.astro";
           </div>
         </footer>
 
-        <form data-astro-form class="w-full snap-end py-20">
+        <form id="form" method="post" action="" class="w-full snap-end py-20">
           <header class="mb-14 w-full text-start">
             <h6 class="text-3xl font-normal">Rellene el Formulario</h6>
           </header>
@@ -212,15 +213,14 @@ import TitleCyber from "../svg/TitleCyber.astro";
             <span class="flex flex-col">
               <label
                 class="font-semibold mb-3 text-base opacity-70"
-                for="nombreCompleto">Nombre:</label
+                for="nombre">Nombre:</label
               >
               <input
                 placeholder="Juan Perez"
-                class="border-b-2"
+                class="border-b-2 focus:border-black focus:outline-none"
                 type="text"
-                id="nombreCompleto"
-                name="nombreCompleto"
-                required
+                id="nombre"
+                name="nombre"
               />
             </span>
 
@@ -230,11 +230,10 @@ import TitleCyber from "../svg/TitleCyber.astro";
               >
               <input
                 placeholder="juanperez@gmail.com"
-                class="border-b-2"
+                class="border-b-2 focus:border-black focus:outline-none"
                 type="email"
                 id="mail"
                 name="mail"
-                required
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               />
             </span>
@@ -245,12 +244,10 @@ import TitleCyber from "../svg/TitleCyber.astro";
                 for="telefono">Teléfono:</label
               >
               <input
-                class="border-b-2"
+                class="border-b-2 focus:border-black focus:outline-none"
                 type="tel"
                 id="telefono"
                 name="telefono"
-                required
-                pattern="[0-9]{10}"
                 placeholder="Cód Área + Num Celular"
               />
             </span>
@@ -260,13 +257,18 @@ import TitleCyber from "../svg/TitleCyber.astro";
                 class="font-semibold mb-3 text-base opacity-70"
                 for="modelo">Modelo:</label
               >
-              <select class="border-b-2" id="modelo" name="modelo" required>
+              <select
+                class="border-b-2 focus:border-black focus:outline-none"
+                id="modelo"
+                name="modelo"
+                required
+              >
                 <option value="">Seleccione un modelo</option>
-                <option value="modelo1">Seleccione un modelo 1</option>
-                <option value="modelo2">Seleccione un modelo 2</option>
-                <option value="modelo3">Seleccione un modelo 3</option>
-                <option value="modelo4">Seleccione un modelo 4</option>
-                <option value="modelo5">Seleccione un modelo 5</option>
+                <option value="modelo1">Modelo S</option>
+                <option value="modelo2">Modelo 3</option>
+                <option value="modelo3">Modelo X</option>
+                <option value="modelo4">Modelo Y</option>
+                <option value="modelo5">Modelo Cybertruck</option>
               </select>
             </span>
 
@@ -277,19 +279,19 @@ import TitleCyber from "../svg/TitleCyber.astro";
               >
               <textarea
                 placeholder="Agregue un comentario"
-                class="border-b-2 resize-none"
+                class="border-b-2 resize-none focus:border-black focus:outline-none"
                 id="comentarios"
                 name="comentarios"
-                rows="3"
-                required></textarea>
+                rows="3"></textarea>
             </span>
           </div>
 
-          <ButtonPrimary
-            href="/"
-            class="bg-black/90 text-white"
-            content="Enviar"
-          />
+          <button
+            class="w-[260px] bg-black/90 text-white animate-fade-up max-sm:w-full max-sm:text-sm max-sm:py-[10px] backdrop-blur-lg inline-block text-center py-[8.5px] min-w-48 rounded-md font-medium"
+          >
+            Enviar
+          </button>
+          <p class="text-red-500 pt-5" id="warnings"></p>
         </form>
         <span class="snap-end py-8 w-full text-center text-sm"
           >Tesla © 2024 Privacidad y legal Contacto Ubicaciones</span
@@ -309,3 +311,48 @@ import TitleCyber from "../svg/TitleCyber.astro";
     height: 50px;
   }
 </style>
+
+<script>
+  const form = document.querySelector("#form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nombre = document.querySelector("#nombre") as HTMLInputElement;
+    const telefono = document.querySelector("#telefono") as HTMLInputElement;
+    const mail = document.querySelector("#mail") as HTMLInputElement;
+    const parrafo = document.querySelector("#warnings") as HTMLElement;
+    let warnings = "";
+    let entrar = false;
+    parrafo.innerHTML = "";
+    if (nombre.value.length < 6) {
+      nombre.classList.add("border-red-600");
+      warnings += "El Nombre no es valido (Minimo de Caracteres = 6) <br>";
+    } else {
+      nombre.classList.remove("border-red-600");
+    }
+
+    if (telefono.value.length < 10) {
+      telefono.classList.add("border-red-600");
+      warnings += "El Telefono no es valido (Minimo de Caracteres = 10) <br>";
+    } else {
+      telefono.classList.remove("border-red-600");
+    }
+
+    let validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+    if (!validEmail.test(mail.value)) {
+      mail.classList.add("border-red-600");
+      warnings +=
+        "El Mail no es valido (Ingresar en formato name@gmail.com)  <br>";
+      entrar = true;
+    } else {
+      mail.classList.remove("border-red-600");
+    }
+
+    if (entrar) {
+      parrafo.innerHTML = warnings;
+    } else {
+      parrafo.innerHTML = "Enviado";
+      parrafo.style.color = "green";
+    }
+  });
+</script>
