@@ -29,4 +29,4 @@ https://landing-tesla-cac.vercel.app/
 
 ### Contacto de Desarrolladores/as
 
-[Sebastián Perez](https://www.linkedin.com/in/sebastian-perezz/)
+[Sebastián Perez](https://www.linkedin.com/in/sebastian-perezz/) | [Javier Cerda]([https://www.linkedin.com/in/sebastian-perezz/](https://www.linkedin.com/in/javiercerd%C3%A1/))
